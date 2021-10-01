@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var a = 3
+    function f() {
+        console.log(a);
+        var a = 4
+    }
+
+    f()
+    console.log(b)//undefine 变量提升
+
+    f2()//函数提升 可调用 函数提升必须用声明的方式
+    f3()//不能 变量提升
+
+    var b = 3
+    function f2() {
+        console.log("fn2()");
+    }
+
+    var f3= function () {
+        console.log("fn3()");
+    }
+</script>
+</body>
+</html>
