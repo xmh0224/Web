@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>测试1</button>
+<button>测试2</button>
+<button>测试3</button>
+<script type="text/javascript">
+    var btns = document.getElementsByTagName('button')
+    var length = btns.length
+    for (var i = 0; i < length; i++) {
+        var btn = btns[i]
+        btn.index = i // 让每一个button知道自己的下标
+        btn.onclick = function (){
+            alert("第" + (this.index + 1) + "个")
+        }
+    }
+
+
+    // for (var i = 0; i < length; i++) {
+    //     (function (i) {
+    //         var btn = btns[i]
+    //         btn.onclick = function (){
+    //             alert("第" + (i + 1) + "个")
+    //         }
+    //     })(i)
+    // }
+
+
+
+</script>
+
+</body>
+</html>

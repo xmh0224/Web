@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    // 1、内存溢出
+    var obj = {}
+    for (var i = 0; i < 10000; i++) {
+        obj[i] = new Array(1000000000)
+        // console.log(i);
+    }
+
+    // 2、内存泄露
+        // 意外的全局变量
+    function fn() {
+        a = 3
+        console.log(a);
+    }
+    fn()
+
+    var intervalId = setInterval(function () {
+        console.log('---');
+    },1000)
+
+    clearInterval(intervalId)
+
+    // 3、闭包
+    function fn1() {
+        var a = 4
+        function fn2() {
+            console.log(++a);
+        }
+        return fn2
+    }
+    var f = fn1()
+    f()
+    f = null
+
+
+</script>
+</body>
+</html>
