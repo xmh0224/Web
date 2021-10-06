@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h1>1.双大括号表达式</h1>
+    <p>{{ msg }}</p>  <!--textContent-->
+    <p v-text="msg"></p> <!--textContent-->
+    <p v-html="msg"></p> <!--innerHTML-->
+
+<h2>2.指令一：强制数据绑定</h2>
+    <img src="imgUrl">
+    <img :src="imgUrl">
+
+<h3>3.指令二：绑定事件监听</h3>
+    <button @click="test(imgUrl)">test1</button>
+    <button @click="test2">test1</button>
+
+
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+    new Vue({
+        el:'#app',
+        data:{
+            msg:'<a href="https:/www.baidu.com">baidu</a>',
+            imgUrl:'https://cn.vuejs.org/images/logo.svg',
+        },
+        methods:{
+            test(name){
+                this.name = name
+                alert(name)
+            },
+            test2(){
+                alert('aaaaa')
+            }
+        }
+    })
+
+
+</script>
+</body>
+</html>

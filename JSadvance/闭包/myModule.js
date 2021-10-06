@@ -12,4 +12,5 @@ function myModule() {
         doOtherthing: doOtherthing,
         doSomething: doSomething
     }
+
 }

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" placeholder="数值" id="number">
+<button id="btn">计算</button>
+<script type="text/javascript">
+
+    function fibonacci(n) {
+        return n <= 2 ? 1 : fibonacci(n-1) + fibonacci(n-2)//递归调用，函数内部调用自己
+    }
+
+    console.log(fibonacci(3));
+    var input = document.getElementById("number")
+    document.getElementById('btn').onclick = function () {
+        var number = input.value
+        var result = fibonacci(number)//交给分线程去做，引入Web Worker多线程
+        alert(result)
+    }
+
+</script>
+</body>
+</html>

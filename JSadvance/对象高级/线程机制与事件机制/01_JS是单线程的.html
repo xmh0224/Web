@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    setTimeout(function () {
+        console.log("延迟两秒----")
+    },2000)
+    setTimeout(function () {
+        console.log("延迟一秒--");
+        alert("||||||")
+    },1000)
+    function fn() {
+        console.log('fn()');
+    }
+    fn()
+    console.log("alert()之前");
+    alert("----")
+    console.log("alert()之后");
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+    function createPerson(name,age) {
+        var obj = {
+            name: name,
+            age: age,
+            setName: function (name) {
+                this.name = name
+            }
+        }
+        return obj
+    }
+    var f1 = createPerson("bob",12)
+    var f2 = createPerson("jack", 16)
+    console.log(f1.name, f1.age);
+
+    function createStudent(name,price) {
+        var obj = {
+            name: name,
+            price: price,
+        }
+        return obj
+    }
+
+    var s = createStudent("张三", 10000)
+    console.log(s);
+
+
+</script>
+</body>
+</html>

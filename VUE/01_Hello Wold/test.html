@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="hello">
+    <input type="text" v-model="username">
+    <p>
+        Hello {{ username }}
+    </p>
+</div>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <script type="text/javascript">
+    // 创建vue实例
+    const vm = new Vue({// 配置对象
+        el:'#hello',//element: 选择器
+        data:{// 数据（model）
+            username: 'xumianhao'
+        }
+    })
+    </script>
+
+<!--
+MVVM
+M：model //模型，数据对象data
+V：view //视图，模板页面
+VM：viewmodel //视图模型（vue的实例）
+-->
+
+</body>
+</html>

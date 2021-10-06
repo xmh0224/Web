@@ -112,3 +112,36 @@ console.log(maxLengthBetweenEqualCharacters("fwejfldskjf"))
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
