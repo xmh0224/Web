@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .parent{
+            width: 200px;
+            height: 200px;
+            background: red;
+            position: relative
+        }
+        .child{
+            width:100px;
+            height: 100px;
+            background: green;
+            /*居中第二种方式:子元素绝对定位,父元素相对定位,设置margin:auto*/
+            top:0;
+            bottom: 0;
+            left:0;
+            right:0;
+            margin:auto;
+            position:absolute;
+            /*居中第二种方式:子元素绝对定位,父元素相对定位,设置transform*/
+            /*top: 50%;*/
+            /*left: 25%;*/
+            /*transform: translateY(-50%);*/
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div id="example">
+    <h2>1. 绑定监听</h2>
+    <button @click="test1">test1()</button>
+    <button @click="test2('xuhh')">test2()</button>
+    <button @click="test3">test3()</button>
+    <button @click="test4(250,$event)">test4()</button>
+
+    <h2>2. 事件修饰符</h2>
+    <div class="parent"  @click="test5">
+        <div class="child" @click.stop="test6"></div><!--.stop阻止冒泡-->
+    </div>
+    <a href="https://www.baidu.com" @click="test7">去百度</a><!--event.preventDefault阻止事件默认行为-->
+
+    <h2>3. 按键修饰符</h2>
+    <input type="text" @keyup.13="test8"><!--enter键keyCode为13--><br>
+    <input type="text" @keyup.enter="test8">
+
+</div>
+
+
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+    new Vue({
+        el:'#example',
+        data:{
+            test1 (){
+                alert('test1()')
+            },
+            test2 (msg){
+                alert(msg)
+            },
+            test3 (event){
+                alert(event.target.innerHTML)
+            },
+            test4(number,event){
+                alert(number + '---' + event.target.innerHTML)
+            },
+            test5(){
+                alert('out')
+            },
+            test6(event){
+                // event.stopPropagation()//阻止冒泡
+                alert('inner')
+            },
+            test7(event){
+                alert('点击了')
+                event.preventDefault()//阻止事件的默认行为
+            },
+            test8(event){
+                // 常规写法
+                // if(event.keyCode===13){
+                //     alert(event.target.value)
+                // }
+                // vue写法
+                alert(event.target.value)
+            }
+        }
+    })
+
+
+
+</script>
+
+
+</body>
+</html>

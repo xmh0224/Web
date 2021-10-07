@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue实例生命周期</title>
+</head>
+<body>
+
+<div id="demo">
+    <button @click="destoryVm">destory vm</button>
+    <p v-show="isShow">地科院学习教育</p>
+
+
+</div>
+
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+    new Vue({
+        el:"#demo",
+        data:{
+            isShow:true,
+        },
+        methods:{
+            destoryVm(){
+                //干掉vm
+                this.$destroy()
+            }
+        },
+        computed:{},
+
+        // 初始化阶段
+        beforeCreate(){
+            console.log('beforeCreate()');
+        },
+        created(){
+            console.log('created()');
+        },
+
+        // 挂载阶段
+        beforeMount(){
+            console.log('beforeMount()');
+        },
+        mounted(){ // 初始化显示之后立即调用,生命周期回调函数
+            // 发送ajax请求,启动定时器
+            console.log('mounted()');
+            this.intervalId = setInterval(() => { //只要出现回调函数就用箭头函数
+                this.isShow = !this.isShow
+            },1000)
+        },
+
+        // 更新阶段
+        beforeUpdate(){
+            console.log('beforeUpdate()');
+        },
+        updated(){
+            console.log('updated()');
+        },
+
+        // 死亡阶段
+        beforeDestory(){// 生命周期回调函数,死亡之前调用
+            //清除定时器
+            console.log('beforeDestory()');
+            clearInterval(this.intervalId)
+        },
+        destroyed(){
+            console.log('destoryed()');
+        }
+    })
+
+</script>
+
+</body>
+</html>

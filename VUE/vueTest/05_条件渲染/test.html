@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="demo">
+    <p v-if="ok">成功了</p><!--把标签移除，删除-->
+    <p v-else>失败了</p>
+
+    <p v-show="ok">表白成功</p><!--把标签隐藏，display:none-->
+    <p v-show="!ok">表白失败</p>
+
+    <button @click="onClick">切换</button>
+
+</div>
+
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+    new Vue({
+        el:'#demo',
+        data:{
+            ok:true,
+        },
+        methods:{
+            onClick(){
+                this.ok=false
+            }
+        }
+    })
+
+
+</script>
+
+
+</body>
+</html>

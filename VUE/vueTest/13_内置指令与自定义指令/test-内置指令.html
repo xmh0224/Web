@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>内置指令</title>
+    <style>
+        /*属性选择器*/
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="example">
+    <p ref="content">hahahxumianhao</p>
+    <button @click="hint">提示</button>
+    <p>{{msg}}</p>
+    <p v-html="msg"></p>
+    <p v-cloak="show">{{msg}}</p>
+
+</div>
+
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+    alert('-------')
+    new Vue({
+        el:'#example',
+        data:{
+            msg:'xumianhaolaalala1',
+            show:true
+        },
+        methods:{
+            hint(){
+                alert(this.$refs.content.innerHTML)
+            }
+        }
+    })
+
+
+</script>
+</body>
+</html>

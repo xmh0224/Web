@@ -105,8 +105,8 @@
 	
 # 7. vue内置指令
 	v-text/v-html: 指定标签体
-    	* v-text : 当作纯文本
-		* v-html : 将value作为html标签来解析
+    	* v-text : 当作纯文本---textContent
+		* v-html : 将value作为html标签来解析---innerHTML
 	v-if v-else v-show: 显示/隐藏元素
 		* v-if : 如果vlaue为true, 当前标签会输出在页面中
 		* v-else : 与v-if一起使用, 如果value为false, 将当前标签输出到页面中
@@ -131,9 +131,12 @@
 	v-model
 		* 双向数据绑定
 		* 自动收集用户输入数据
-	ref : 标识某个标签
-		* ref='xxx'
-		* 读取得到标签对象: this.$refs.xxx
+	ref : 标识某个标签----指定唯一标识
+            * ref='xxx'
+            * vue对象通过$els属性访问这个元素对象
+            * 读取得到标签对象: this.$refs.xxx
+    v-cloak: 防止闪现
+             *与css配合:[v-cloak]{display:none}
   
 # 8. 自定义指令
 ## 1). 注册全局指令
