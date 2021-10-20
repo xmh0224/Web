@@ -103,7 +103,7 @@
           })
     
 ## 5. vue-router
-    vue用来实现SPA的插件
+    vue用来实现SPA（单页应用）的插件
     使用vue-router
         1. 创建路由器: router/index.js
           new VueRouter({

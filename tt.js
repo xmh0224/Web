@@ -83,59 +83,88 @@
 // var a = false||typeof (4399 + ' ');
 // console.log(a)
 
-var words = ["spray", "limit", "elite", "exuberant", "destruction", "present", "happy"];
+// var words = ["spray", "limit", "elite", "exuberant", "destruction", "present", "happy"];
+//
+// var longWords = words.filter(function (word) {
+//     return word.length > 6;
+// });
+// console.log(longWords);
+//
+//
+// function maxLengthBetweenEqualCharacters(s) {
+//     let map = {};
+//     let res = 0;
+//     for (let i = 0; i < s.length; i++) {
+//         if (map[s[i]] != undefined) {
+//             res = Math.max(res, i - map[s[i]]);
+//         } else {
+//             map[s[i]] = i;
+//         }
+//     }
+//     return res - 1;
+// }
+//
+// module.exports = {
+//     maxLengthBetweenEqualCharacters: maxLengthBetweenEqualCharacters
+// }
+//
+// console.log(maxLengthBetweenEqualCharacters("fwejfldskjf"))
 
-var longWords = words.filter(function (word) {
-    return word.length > 6;
-});
-console.log(longWords);
 
 
-function maxLengthBetweenEqualCharacters(s) {
-    let map = {};
-    let res = 0;
-    for (let i = 0; i < s.length; i++) {
-        if (map[s[i]] != undefined) {
-            res = Math.max(res, i - map[s[i]]);
-        } else {
-            map[s[i]] = i;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var arrA = [1,[2,[1,3,[4,5]]]]
+function flatten1(arr) {
+    var result = [];
+    for (var i = 0, len = arr.length; i < len; i++) {
+        if (Array.isArray(arr[i])) {
+            result = result.concat(flatten1(arr[i]))
+        }
+        else {
+            result.push(arr[i])
         }
     }
-    return res - 1;
+    return result;
+}
+function flatten2(arrA) {
+    var result = [];
+    for (var i = 0; i < arrA.length; i++) {
+        if(!Array.isArray(arrA[i])){
+            result.push(arrA[i])
+        }else{
+            result = result.concat(flatten(arrA[i]))
+        }
+    };
+    return  result;
 }
 
-module.exports = {
-    maxLengthBetweenEqualCharacters: maxLengthBetweenEqualCharacters
+console.log(flatten2(arrA));
+console.log(flatten1(arrA));
+console.log(arrA.flat(Infinity));
+
+function flatten(arrA) {
+    return arrA.toString().split(',').map(item=>+item)
 }
+var arrB = flatten(arrA)
+console.log(Array.from(new Set(arrB)));
+console.log(flatten(arrA));
 
-console.log(maxLengthBetweenEqualCharacters("fwejfldskjf"))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(typeof +'1')
 
 
 
